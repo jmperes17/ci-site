@@ -1,0 +1,56 @@
+<?php $this->load->view('menu.html'); ?>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/form-contato.css">
+</head>
+
+<body>
+    <div class="container-form">
+        <div class="child">
+            <form class="formulario" action="<?php echo base_url('result'); ?>" method="post">
+                <h2>Contato</h2>
+                <p> Envie uma mensagem respondendo o formulário abaixo</p>
+
+                <div class="field">
+                    <label for="nome">Seu Nome:</label>
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome*" required>
+                </div>
+
+                <div class="field">
+                    <label for="telefone">Seu Telefone:</label>
+                    <input type="text" id="telefone" name="telefone" placeholder="Digite seu Telefone">
+                </div>
+
+                <div class="field">
+                    <label for="email">Seu E-Mail:</label>
+                    <input type="email" id="email" name="email" placeholder="Digite seu E-Mail*" required>
+                </div>
+
+                <div class="field">
+                    <label for="mensagem">Sua mensagem:</label>
+                    <textarea name="mensagem" id="mensagem" placeholder="Mensagem*" required></textarea>
+                </div>
+
+                <input type="submit" name="acao" value="Enviar">
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
+<?php
+    if (isset($_POST["acao"])){
+    echo "<script>alert('Mensagem enviada!')</script>";
+        $nome=$_POST["nome"];
+        $telefone=$_POST["telefone"];
+        $email=$_POST["email"];
+        $curriculo=$_POST["curriculo"];
+        $msg=$_POST["mensagem"];
+    }
+?>
+
+<?php $this->load->view('footer.html'); ?>
