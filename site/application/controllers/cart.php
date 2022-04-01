@@ -10,7 +10,7 @@ class Cart extends CI_Controller{
         $this->load->library('cart');
         
         // Load product model
-        $this->load->model('M_products');
+        $this->load->model('product');
     }
     
     function index(){
@@ -36,7 +36,7 @@ class Cart extends CI_Controller{
                 'rowid' => $rowid,
                 'qty'   => $qty
             );
-            $update = $this->cart->update($data);
+            $update = $this->Cart->update($data);
         }
         
         // Return response

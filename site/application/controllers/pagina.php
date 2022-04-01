@@ -31,7 +31,8 @@ class Pagina extends CI_Controller {
 
 	public function produtos() {
 		$dados['titulo'] = 'Produtos - Jm Sports';
-        $this->load->view('products.php', $dados);
+        $this->load->view('products', $dados);
+		#redirect(base_url('Products/'));
 
 	}
 
@@ -51,11 +52,11 @@ class Pagina extends CI_Controller {
 
 	}
 
-	public function cart() {
-		$dados['titulo'] = 'Jm Sports';
-        $this->load->view('cart/index.php', $dados);
+	#public function cart() {
+		#$dados['titulo'] = 'Jm Sports';
+        #$this->load->view('cart/index', $dados);
 
-	}
+	#}
 
 
 

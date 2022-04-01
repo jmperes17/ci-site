@@ -10,17 +10,19 @@ class Products extends CI_Controller{
         $this->load->library('cart');
         
         // Load product model
-        $this->load->model('M_products');
+        $this->load->model('product');
     }
     
     function index(){
         $data = array();
         
         // Fetch products from the database
+        
         $data['products'] = $this->product->getRows();
+        #var_dump($data);
         
         // Load the product list view
-        $this->load->view('produtos/index', $data);
+        $this->load->view('productss/index', $data);
     }
     
     function addToCart($proID){
@@ -39,7 +41,14 @@ class Products extends CI_Controller{
         $this->cart->insert($data);
         
         // Redirect to the cart page
-        redirect('cart/');
+        #redirect('Cart/');
+        #redirect(base_url('Cart/'));
+        $this->load->view('cart/index', $data);
     }
+
+    
     
 }
+
+
+

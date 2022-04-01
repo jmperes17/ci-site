@@ -58,5 +58,5 @@ $route['produtos'] = 'pagina/produtos';
 $route['login'] = 'pagina/login';
 $route['result'] = 'pagina/result';
 $route['camisa_1'] = 'pagina/camisa_1';
-$route['cart'] = 'pagina/cart';
+$route['cart'] = 'cart/index';
 
